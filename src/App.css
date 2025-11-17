@@ -178,12 +178,17 @@ header h1 {
   color: white;
 }
 
+.save-btn {
+  background-color: #1976d2;
+  color: white;
+}
+
 
 /* --------------------------------------------------
    Responsive Design
 -------------------------------------------------- */
 
-/* 📱 Mobile (max-width 480px) */
+/* Mobile (max-width 480px) */
 @media (max-width: 480px) {
   header h1 {
     font-size: 22px;
@@ -221,7 +226,7 @@ header h1 {
   }
 }
 
-/* 📲 Small Tablets (max-width 768px) */
+/* Small Tablets (max-width 768px) */
 @media (max-width: 768px) {
   .todo-input-container {
     max-width: 90%;
@@ -236,7 +241,7 @@ header h1 {
   }
 }
 
-/* 💻 Large screens */
+/* Large screens */
 @media (min-width: 1200px) {
   .todo-list,
   .todo-input-container {

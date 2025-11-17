@@ -1,12 +1,12 @@
 import TodoItem from "./TodoItem";
 
-function TodoList(Props) {
+function TodoList({Items, onStatusChange, onEdit, onDelete}) {
     return (
         <>
             <ul className="todo-list">
-                {Props.Items.map((todo, index) => (
-                    <li key={index} className="todo-list-item">
-                        <TodoItem item={todo} />
+                {Items.map((todo) => (
+                    <li key={todo.id} className="todo-list-item">
+                        <TodoItem item={todo} onStatusChange={onStatusChange} onEdit={onEdit} onDelete={onDelete}/>
                     </li>
                 ))}
             </ul>
