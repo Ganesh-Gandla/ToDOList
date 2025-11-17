@@ -1,0 +1,250 @@
+/* --------------------------------------------------
+   Header
+-------------------------------------------------- */
+header {
+  width: 100%;
+  padding: 20px 0;
+  background: linear-gradient(135deg, #1976d2, #42a5f5);
+  color: white;
+  text-align: center;
+  border-radius: 0 0 12px 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+header h1 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+
+/* --------------------------------------------------
+   Todo Input Area
+-------------------------------------------------- */
+.todo-input-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 20px auto;
+  max-width: 600px;
+  padding: 0 12px;
+}
+
+.todo-input {
+  flex: 1;
+  padding: 10px 14px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.todo-input:focus {
+  border-color: #4a90e2;
+  box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.2);
+}
+
+.add-btn {
+  padding: 10px 20px;
+  background-color: #1976d2;
+  color: white;
+  font-size: 15px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.add-btn:hover {
+  background-color: #1158a3;
+}
+
+
+/* --------------------------------------------------
+   Todo List
+-------------------------------------------------- */
+.todo-list {
+  list-style: none;
+  padding: 0 12px;
+  margin: 20px auto;
+  max-width: 600px;
+}
+
+.todo-list-item {
+  margin-bottom: 12px;
+  animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* --------------------------------------------------
+   Todo Item Card
+-------------------------------------------------- */
+.todo-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  background: #ffffff;
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: 1px solid #e2e2e2;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+  width: 100%;
+  gap: 12px;
+}
+
+.todo-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  max-width: 75%;
+}
+
+.todo-text {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.4;
+  word-wrap: break-word;
+}
+
+/* Status button base style */
+.status {
+  font-weight: 600;
+  margin-top: 8px;
+  width: fit-content;
+  border-radius: 6px;
+  padding: 4px 10px;
+  border: none;
+  cursor: pointer;
+  color: white;
+  font-size: 14px;
+  transition: transform 0.1s ease, opacity 0.15s ease;
+}
+
+/* Completed */
+.completed {
+  background-color: #2e7d32;
+}
+
+/* Pending */
+.pending {
+  background-color: #ff9800;
+}
+
+/* Hover effect */
+.status:hover {
+  opacity: 0.9;
+}
+
+/* Active click effect */
+.status:active {
+  transform: scale(0.96);
+}
+
+
+.todo-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.todo-actions button {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  width: 80px;
+  transition: opacity 0.15s ease;
+}
+
+.edit-btn {
+  background-color: #4caf50;
+  color: white;
+}
+
+.delete-btn {
+  background-color: #e53935;
+  color: white;
+}
+
+
+/* --------------------------------------------------
+   Responsive Design
+-------------------------------------------------- */
+
+/* 📱 Mobile (max-width 480px) */
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 22px;
+  }
+
+  .todo-input-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .add-btn {
+    width: 100%;
+  }
+
+  .todo-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .status {
+    padding: 6px 12px;
+    font-size: 15px;
+  }
+
+  .todo-actions {
+    flex-direction: row;
+    width: 100%;
+    justify-content: flex-end;
+    margin-top: 10px;
+  }
+
+  .todo-actions button {
+    flex: 1;
+    max-width: none;
+  }
+}
+
+/* 📲 Small Tablets (max-width 768px) */
+@media (max-width: 768px) {
+  .todo-input-container {
+    max-width: 90%;
+  }
+
+  .todo-list {
+    max-width: 90%;
+  }
+
+  .todo-item {
+    padding: 12px;
+  }
+}
+
+/* 💻 Large screens */
+@media (min-width: 1200px) {
+  .todo-list,
+  .todo-input-container {
+    max-width: 700px;
+  }
+
+  header h1 {
+    font-size: 32px;
+  }
+}
+

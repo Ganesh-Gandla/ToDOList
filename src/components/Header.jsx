@@ -1,10 +1,8 @@
-import TodoList from "./TodoList";
 
 function Header() {
   return (
     <header>
-      <h1>Welcome to My Website</h1>
-      <TodoList />
+      <h1>My To-Do List</h1>
     </header>
   );
 }
