@@ -21,6 +21,8 @@ function App() {
 
   // functions
 
+  // function to add a new todo item
+
   function handleAdd() {
     if(input.trim() === ""){
       notify();
@@ -30,6 +32,8 @@ function App() {
     setInput("");
     console.log(List);
   }
+
+  // function to change status of a todo item
 
   function handleStatusChange(id) {
     setList(
@@ -42,8 +46,9 @@ function App() {
     );
   } 
 
+  // function to edit a todo item
+
   function handleEdit(id, updatedText) {
-    // Logic to edit a todo item
     setList(
       List.map((todo) => {
         if (todo.id === id) {
@@ -53,6 +58,8 @@ function App() {
       })
     );
   }
+
+  // function to delete a todo item
 
   function handleDelete(id) {
     setList(List.filter((todo) => todo.id !== id));
