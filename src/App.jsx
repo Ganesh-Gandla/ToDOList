@@ -24,13 +24,12 @@ function App() {
   // function to add a new todo item
 
   function handleAdd() {
-    if(input.trim() === ""){
+    if (input.trim() === "") {
       notify();
       return;
-    } 
+    }
     setList([...List, newTodo]);
     setInput("");
-    console.log(List);
   }
 
   // function to change status of a todo item
@@ -44,7 +43,7 @@ function App() {
         return todo;
       })
     );
-  } 
+  }
 
   // function to edit a todo item
 
@@ -52,6 +51,10 @@ function App() {
     setList(
       List.map((todo) => {
         if (todo.id === id) {
+          if (updatedText.trim() === "") {
+            notify();
+            return todo;
+          }
           return { ...todo, item: updatedText };
         }
         return todo;
@@ -67,19 +70,9 @@ function App() {
 
   return (
     <>
-      <Header />
       <ToastContainer />
-      <div className="todo-input-container">
-        <input
-          onChange={(e) => setInput(e.target.value)}
-          type="text"
-          value={input}
-          placeholder="Add a new todo"
-          className="todo-input"
-        />
-        <button onClick={handleAdd} className="add-btn">Add</button>
-      </div>
-      <TodoList Items={List} onStatusChange={handleStatusChange} onEdit={handleEdit} onDelete={handleDelete}/>
+      <Header input={input} setInput={setInput} handleAdd={handleAdd} />
+      <TodoList Items={List} onStatusChange={handleStatusChange} onEdit={handleEdit} onDelete={handleDelete} />
     </>
   )
 }
